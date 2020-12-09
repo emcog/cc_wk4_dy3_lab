@@ -1,6 +1,10 @@
+from controllers.books_controller import books_blueprint
+
 from flask import Flask, render_template
 
+
 app = Flask(__name__)
+app.register_blueprint(books_blueprint)
 
 @app.route('/')
 def home():
