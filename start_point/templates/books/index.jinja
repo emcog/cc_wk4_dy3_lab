@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>A list of books<h1>
+<ul>
+    {% for book in books %}
+    <li>
+        <span>{{Title}}</span>
+        <span>{{Author}}</span>
+        <div>
+            <form class ='delete-form' action = '/books/{{ book.id }}/delete' method = 'POST'>
+                <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+            </form> 
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
